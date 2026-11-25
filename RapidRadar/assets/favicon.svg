@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Dark background -->
+  <circle cx="16" cy="16" r="16" fill="#0d1117"/>
+  <!-- Radar rings -->
+  <circle cx="16" cy="16" r="12" fill="none" stroke="#58a6ff" stroke-width="1.5" opacity="0.35"/>
+  <circle cx="16" cy="16" r="7"  fill="none" stroke="#58a6ff" stroke-width="1.5" opacity="0.6"/>
+  <!-- Centre dot -->
+  <circle cx="16" cy="16" r="2.2" fill="#58a6ff"/>
+  <!-- Sweep arm -->
+  <line x1="16" y1="16" x2="27" y2="7" stroke="#3fb950" stroke-width="1.8" stroke-linecap="round"/>
+  <!-- Blip on sweep -->
+  <circle cx="23.5" cy="9.5" r="2.8" fill="#3fb950" opacity="0.9"/>
+  <!-- Faint echo blip -->
+  <circle cx="11" cy="22" r="1.8" fill="#58a6ff" opacity="0.45"/>
+</svg>

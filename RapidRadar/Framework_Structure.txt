@@ -1,0 +1,63 @@
+================================================================
+  WEB PAGE PERFORMANCE TESTING FRAMEWORK
+================================================================
+
+FRAMEWORK STRUCTURE
+-------------------
+Page_Slowness_AI/
+├── run_test.py                          <- CLI entry point
+├── requirements.txt                     <- Playwright dependency
+├── README.md                            <- Full usage guide
+└── performance_framework/
+    ├── __init__.py
+    ├── tester.py                        <- Browser engine (Playwright)
+    └── report_generator.py             <- Self-contained HTML report
+
+
+HOW TO USE
+----------
+
+Step 1 – Install dependencies:
+
+    pip install -r requirements.txt
+    playwright install
+
+Step 2 – Run a test:
+
+    python run_test.py \
+        --login-url  https://myapp.com/login \
+        --username   admin@company.com \
+        --password   mypassword \
+        --page-url   https://myapp.com/dashboard \
+        --browser    chrome
+
+Step 3 – Open the generated file in any browser:
+
+    performance_report.html
+
+
+HTML REPORT CONTENTS
+--------------------
+
+  Section                 Description
+  ----------------------  -------------------------------------------------------
+  Summary Cards           No-cache load time, with-cache load time, cache
+                          improvement %, browser, slow API count
+  Charts                  Load time comparison bar chart; resource-type donut chart
+  Timing Breakdown        DNS, TCP, TTFB, Server Response, DOM Interactive,
+                          DOM Loaded, Total — side-by-side for both runs with diff
+  Core Web Vitals         FCP, LCP, CLS, TTFB with green/yellow/red colour coding
+  Performance Issues      Auto-diagnosed findings (CRITICAL / HIGH / MEDIUM / LOW)
+                          with fix recommendations
+  Slow API Calls          All XHR/Fetch calls over the threshold (default 3 s),
+                          sorted by duration
+  Slow / Large Resources  Resources > 1 s  ·  Resources > 500 KB  ·
+                          Render-blocking scripts/styles
+  All API Calls           Complete API call log for both runs
+
+
+SUPPORTED BROWSERS
+------------------
+  chrome  |  firefox  |  edge  |  webkit / safari  |  chromium
+
+================================================================
